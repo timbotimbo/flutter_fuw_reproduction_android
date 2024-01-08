@@ -9,6 +9,12 @@ Project created using flutter create using flutter 3.13.9.
 + include ":unityLibrary"
 + project(":unityLibrary").projectDir = file("./unityLibrary")
 ```
+and `android/app/build.gradle`
+```diff
++ dependencies {
++    implementation project(':unityLibrary')
++ }
+```
 
 The `android/unityLibrary` folder contains an export made from Unity using `flutter_unity_widget`.  
 Normally this folder should be ignored in git, but in this repo it is deliberately included to be able to run this example without having to use the Unity software.  
