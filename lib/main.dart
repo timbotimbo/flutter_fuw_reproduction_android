@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unity_widget/flutter_unity_widget.dart';
+import 'package:flutter_embed_unity/flutter_embed_unity.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,10 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ? Container(
                 // red background only shows when UnityWidget is transparent/invisible
                 color: Colors.red,
-                child: UnityWidget(
-                  onUnityCreated: (controller) => {},
-                ),
-              )
+                child: EmbedUnity())
             : null,
       ),
       floatingActionButton: FloatingActionButton(
