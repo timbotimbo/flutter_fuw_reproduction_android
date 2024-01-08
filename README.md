@@ -1,9 +1,11 @@
+This flutter_embed_unity branch uses an alternative unity plugin to compare the two.
+
 # flutter_fuw_reproduction_android
-A Flutter project to run flutter_unity_widget on Android without any Unity setup. Intended for reproducing platformview bugs.
+A Flutter project to run flutter_embed_unity on Android without any Unity setup. Intended for reproducing platformview bugs.
 
 ## Project creation
 Project created using flutter create using flutter 3.13.9. 
-- `pubspec.yaml` and `main.dart` wer modified to include the flutter_unity_widget.
+- `pubspec.yaml` and `main.dart` were modified to include the unity widget.
 - The unity export script modified `android/settings.gradle`
 ```diff
 + include ":unityLibrary"
