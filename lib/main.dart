@@ -53,6 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 // red background only shows when UnityWidget is transparent/invisible
                 color: Colors.red,
                 child: UnityWidget(
+                  // PlatformView mode: false -> Virtual Display, true -> Hybrid composition
+                  useAndroidViewSurface: false, 
                   onUnityCreated: (controller) => {},
                 ),
               )
