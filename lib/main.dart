@@ -48,12 +48,31 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         color: Colors.white,
-        child: _enabled
-            ? Container(
-                // red background only shows when UnityWidget is transparent/invisible
-                color: Colors.red,
-                child: EmbedUnity())
-            : null,
+        child: Stack(children: [
+          _enabled
+              ? Container(
+                  // red background only shows when UnityWidget is transparent/invisible
+                  color: Colors.red,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: EmbedUnity())
+              : SizedBox(),
+          Positioned(
+            bottom: 20,
+            left: 20,
+            child: Container(
+              height: 40,
+              width: MediaQuery.of(context).size.width / 2,
+              color: Colors.white,
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Text input',
+                ),
+              ),
+            ),
+          ),
+        ]),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggleUnity,
