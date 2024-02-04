@@ -48,17 +48,36 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         color: Colors.white,
-        child: _enabled
-            ? Container(
-                // red background only shows when UnityWidget is transparent/invisible
-                color: Colors.red,
-                child: UnityWidget(
-                  // PlatformView mode: false -> Virtual Display, true -> Hybrid composition
-                  useAndroidViewSurface: false, 
-                  onUnityCreated: (controller) => {},
+        child: Stack(children: [
+          _enabled
+              ? Container(
+                  // red background only shows when UnityWidget is transparent/invisible
+                  color: Colors.red,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: UnityWidget(
+                    // PlatformView mode: false -> Virtual Display, true -> Hybrid composition
+                    useAndroidViewSurface: false,
+                    onUnityCreated: (controller) => {},
+                  ),
+                )
+              : SizedBox(),
+          Positioned(
+            bottom: 20,
+            left: 20,
+            child: Container(
+              height: 40,
+              width: MediaQuery.of(context).size.width / 2,
+              color: Colors.white,
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Text input',
                 ),
-              )
-            : null,
+              ),
+            ),
+          ),
+        ]),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggleUnity,
