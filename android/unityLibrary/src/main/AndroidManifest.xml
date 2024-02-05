@@ -8,7 +8,7 @@
     <meta-data android:name="unity.launch-fullscreen" android:value="False" />
     <meta-data android:name="unity.allow-resizable-window" android:value="False" />
     <meta-data android:name="notch.config" android:value="portrait|landscape" />
-    <meta-data android:name="unity.build-id" android:value="8b16e944-1c06-4cc0-a34b-946c101cc623" />
+    <meta-data android:name="unity.build-id" android:value="637404d4-9900-440b-a7af-b5b6ccdcd240" />
   </application>
   <uses-feature android:glEsVersion="0x00030000" />
   <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
